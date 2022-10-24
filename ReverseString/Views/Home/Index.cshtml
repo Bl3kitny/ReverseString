@@ -1,0 +1,20 @@
+﻿@model RandomString
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>        
+        <div class="mb-3">
+            <label asp-for="ReverseName"></label>
+            <input asp-for="ReverseName" disabled class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Reverse</button>
+    </div>
+</form>
+
+

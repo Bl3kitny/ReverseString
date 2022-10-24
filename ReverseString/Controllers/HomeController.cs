@@ -22,10 +22,18 @@ namespace ReverseString.Controllers
         [HttpPost]
         public IActionResult Index(RandomString rString)
         {
-            var result = Reverse(rString.Name);
-            rString.ReverseName = result;
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                var result = Reverse(rString.Name);
+                rString.ReverseName = result;
 
-            return View(rString);
+                return View(rString);
+            }
+
         }
         public static string Reverse(string str)
         {
